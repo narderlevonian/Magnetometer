@@ -11,6 +11,13 @@
 		B680939629853EA6006974A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B680939529853EA6006974A9 /* ContentView.swift */; };
 		B680939829853EA8006974A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B680939729853EA8006974A9 /* Assets.xcassets */; };
 		B680939B29853EA8006974A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B680939A29853EA8006974A9 /* Preview Assets.xcassets */; };
+		B68093A329854301006974A9 /* SwiftUISineWaveShape in Frameworks */ = {isa = PBXBuildFile; productRef = B68093A229854301006974A9 /* SwiftUISineWaveShape */; };
+		B68093A629855094006974A9 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = B68093A529855094006974A9 /* SoundpipeAudioKit */; };
+		B6C1C3FE2985630E00F782E4 /* DynamicColor in Frameworks */ = {isa = PBXBuildFile; productRef = B6C1C3FD2985630E00F782E4 /* DynamicColor */; };
+		B6C1C4002985668800F782E4 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1C3FF2985668800F782E4 /* MotionManager.swift */; };
+		B6C1C402298566E400F782E4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1C401298566E400F782E4 /* Colors.swift */; };
+		B6C1C4042985A2C600F782E4 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1C4032985A2C600F782E4 /* Frequency.swift */; };
+		B6C1C4062985A2DB00F782E4 /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1C4052985A2DB00F782E4 /* Convert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,10 @@
 		B680939529853EA6006974A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B680939729853EA8006974A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B680939A29853EA8006974A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B6C1C3FF2985668800F782E4 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		B6C1C401298566E400F782E4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B6C1C4032985A2C600F782E4 /* Frequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
+		B6C1C4052985A2DB00F782E4 /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +37,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68093A629855094006974A9 /* SoundpipeAudioKit in Frameworks */,
+				B6C1C3FE2985630E00F782E4 /* DynamicColor in Frameworks */,
+				B68093A329854301006974A9 /* SwiftUISineWaveShape in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +69,10 @@
 				B680939529853EA6006974A9 /* ContentView.swift */,
 				B680939729853EA8006974A9 /* Assets.xcassets */,
 				B680939929853EA8006974A9 /* Preview Content */,
+				B6C1C3FF2985668800F782E4 /* MotionManager.swift */,
+				B6C1C401298566E400F782E4 /* Colors.swift */,
+				B6C1C4032985A2C600F782E4 /* Frequency.swift */,
+				B6C1C4052985A2DB00F782E4 /* Convert.swift */,
 			);
 			path = Magnetometer;
 			sourceTree = "<group>";
@@ -83,6 +101,11 @@
 			dependencies = (
 			);
 			name = Magnetometer;
+			packageProductDependencies = (
+				B68093A229854301006974A9 /* SwiftUISineWaveShape */,
+				B68093A529855094006974A9 /* SoundpipeAudioKit */,
+				B6C1C3FD2985630E00F782E4 /* DynamicColor */,
+			);
 			productName = Magnetometer;
 			productReference = B680939029853EA6006974A9 /* Magnetometer.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +134,11 @@
 				Base,
 			);
 			mainGroup = B680938729853EA6006974A9;
+			packageReferences = (
+				B68093A129854301006974A9 /* XCRemoteSwiftPackageReference "SwiftUISineWaveShape" */,
+				B68093A429855094006974A9 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
+				B6C1C3FC2985630E00F782E4 /* XCRemoteSwiftPackageReference "DynamicColor" */,
+			);
 			productRefGroup = B680939129853EA6006974A9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B680939629853EA6006974A9 /* ContentView.swift in Sources */,
+				B6C1C4062985A2DB00F782E4 /* Convert.swift in Sources */,
+				B6C1C4042985A2C600F782E4 /* Frequency.swift in Sources */,
+				B6C1C4002985668800F782E4 /* MotionManager.swift in Sources */,
 				B680939429853EA6006974A9 /* MagnetometerApp.swift in Sources */,
+				B6C1C402298566E400F782E4 /* Colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,13 +299,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Magnetometer/Preview Content\"";
+				DEVELOPMENT_TEAM = 5Q493YWC66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,13 +329,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Magnetometer/Preview Content\"";
+				DEVELOPMENT_TEAM = 5Q493YWC66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,6 +373,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B68093A129854301006974A9 /* XCRemoteSwiftPackageReference "SwiftUISineWaveShape" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CypherPoet/SwiftUISineWaveShape";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.2;
+			};
+		};
+		B68093A429855094006974A9 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		B6C1C3FC2985630E00F782E4 /* XCRemoteSwiftPackageReference "DynamicColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yannickl/DynamicColor";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B68093A229854301006974A9 /* SwiftUISineWaveShape */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B68093A129854301006974A9 /* XCRemoteSwiftPackageReference "SwiftUISineWaveShape" */;
+			productName = SwiftUISineWaveShape;
+		};
+		B68093A529855094006974A9 /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B68093A429855094006974A9 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
+		};
+		B6C1C3FD2985630E00F782E4 /* DynamicColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6C1C3FC2985630E00F782E4 /* XCRemoteSwiftPackageReference "DynamicColor" */;
+			productName = DynamicColor;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B680938829853EA6006974A9 /* Project object */;
 }
