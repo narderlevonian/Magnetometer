@@ -8,11 +8,19 @@
 import SwiftUI
 import SwiftUISineWaveShape
 import AudioKit
+import AudioToolbox
+import SoundpipeAudioKit
 
 struct ContentView: View {
-    let thickness = 2.0;
-    let opacity = 0.64;
-    let divider = 5000000.0;
+    let thickness = 2.0
+    let opacity = 0.64
+    let divider = 5000000.0
+
+    var engine = AudioEngine()
+
+    var xOsc = MorphingOscillator(frequency: 440, amplitude: 0.2)
+    var yOsc = MorphingOscillator(frequency: 440, amplitude: 0.2)
+    var zOsc = MorphingOscillator(frequency: 440, amplitude: 0.2)
     
     @ObservedObject
     var motion: MotionManager
@@ -26,11 +34,16 @@ struct ContentView: View {
         let dispatchQueue: () = DispatchQueue.main.async {
             withAnimation(phaseShift.repeatForever(autoreverses: false)) {
                 phase.radians = 2.0 * .pi
+                xOsc.frequency = AUValue(frequency.x * frequency.x * 1000 + 20);
+                yOsc.frequency = AUValue(frequency.y * frequency.x * 1000 + 20);
+                zOsc.frequency = AUValue(frequency.z * frequency.x * 1000 + 20);
+                print("Frequency: \(xOsc.frequency)")
             }
         }
         
         VStack {
             Spacer()
+            
             ZStack {
                 SineWave(
                       phase: phase,
@@ -43,6 +56,7 @@ struct ContentView: View {
                   .onAppear {
                       dispatchQueue
                   }
+                
                 SineWave(
                       phase: phase,
                       amplitudeRatio: sqrt(frequency.y),
@@ -54,6 +68,7 @@ struct ContentView: View {
                   .onAppear {
                       dispatchQueue
                   }
+                
                 SineWave(
                       phase: phase,
                       amplitudeRatio: sqrt(frequency.z),
@@ -62,13 +77,28 @@ struct ContentView: View {
                   )
                 .stroke(zColor, lineWidth: thickness)
                 .opacity(opacity)
-                  .onAppear {
-                      dispatchQueue
-                  }
+                .onAppear {
+                    dispatchQueue
+                }
+            }
+            .onAppear {
+                xOsc.start()
+                yOsc.start()
+                zOsc.start()
+                
+                engine.output = Mixer(xOsc, yOsc, zOsc)
+
+                do {
+                    try engine.start()
+                } catch {
+                    print ("AudioKit.start() failed!")
+                }
             }
             .padding()
-            .frame(height: UIScreen.main.bounds.size.height * 0.64)
+            .frame(height: UIScreen.main.bounds.size.height * 0.5)
+
             Spacer()
+            
         }.background(backgroundColor)
     }
 }

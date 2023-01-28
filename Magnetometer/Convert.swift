@@ -12,3 +12,5 @@ func Convert(motion: MotionManager, divider: Double) -> Frequency {
                      y: abs(pow(motion.y, 2.0) / divider),
                      z: abs(pow(motion.z, 2.0) / divider))
 }
+
+

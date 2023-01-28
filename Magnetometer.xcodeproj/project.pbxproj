@@ -12,12 +12,14 @@
 		B680939829853EA8006974A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B680939729853EA8006974A9 /* Assets.xcassets */; };
 		B680939B29853EA8006974A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B680939A29853EA8006974A9 /* Preview Assets.xcassets */; };
 		B68093A329854301006974A9 /* SwiftUISineWaveShape in Frameworks */ = {isa = PBXBuildFile; productRef = B68093A229854301006974A9 /* SwiftUISineWaveShape */; };
-		B68093A629855094006974A9 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = B68093A529855094006974A9 /* SoundpipeAudioKit */; };
 		B6C1C3FE2985630E00F782E4 /* DynamicColor in Frameworks */ = {isa = PBXBuildFile; productRef = B6C1C3FD2985630E00F782E4 /* DynamicColor */; };
 		B6C1C4002985668800F782E4 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1C3FF2985668800F782E4 /* MotionManager.swift */; };
 		B6C1C402298566E400F782E4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1C401298566E400F782E4 /* Colors.swift */; };
 		B6C1C4042985A2C600F782E4 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1C4032985A2C600F782E4 /* Frequency.swift */; };
 		B6C1C4062985A2DB00F782E4 /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1C4052985A2DB00F782E4 /* Convert.swift */; };
+		B6C1C40E2985B70D00F782E4 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = B6C1C40D2985B70D00F782E4 /* AudioKit */; };
+		B6C1C4112985BB3300F782E4 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = B6C1C4102985BB3300F782E4 /* SoundpipeAudioKit */; };
+		B6C1C4132985D1D100F782E4 /* FrequencyTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1C4122985D1D100F782E4 /* FrequencyTransform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,7 @@
 		B6C1C401298566E400F782E4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B6C1C4032985A2C600F782E4 /* Frequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
 		B6C1C4052985A2DB00F782E4 /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
+		B6C1C4122985D1D100F782E4 /* FrequencyTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyTransform.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,8 +40,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68093A629855094006974A9 /* SoundpipeAudioKit in Frameworks */,
+				B6C1C40E2985B70D00F782E4 /* AudioKit in Frameworks */,
 				B6C1C3FE2985630E00F782E4 /* DynamicColor in Frameworks */,
+				B6C1C4112985BB3300F782E4 /* SoundpipeAudioKit in Frameworks */,
 				B68093A329854301006974A9 /* SwiftUISineWaveShape in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +77,7 @@
 				B6C1C401298566E400F782E4 /* Colors.swift */,
 				B6C1C4032985A2C600F782E4 /* Frequency.swift */,
 				B6C1C4052985A2DB00F782E4 /* Convert.swift */,
+				B6C1C4122985D1D100F782E4 /* FrequencyTransform.swift */,
 			);
 			path = Magnetometer;
 			sourceTree = "<group>";
@@ -103,8 +108,9 @@
 			name = Magnetometer;
 			packageProductDependencies = (
 				B68093A229854301006974A9 /* SwiftUISineWaveShape */,
-				B68093A529855094006974A9 /* SoundpipeAudioKit */,
 				B6C1C3FD2985630E00F782E4 /* DynamicColor */,
+				B6C1C40D2985B70D00F782E4 /* AudioKit */,
+				B6C1C4102985BB3300F782E4 /* SoundpipeAudioKit */,
 			);
 			productName = Magnetometer;
 			productReference = B680939029853EA6006974A9 /* Magnetometer.app */;
@@ -136,8 +142,9 @@
 			mainGroup = B680938729853EA6006974A9;
 			packageReferences = (
 				B68093A129854301006974A9 /* XCRemoteSwiftPackageReference "SwiftUISineWaveShape" */,
-				B68093A429855094006974A9 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
 				B6C1C3FC2985630E00F782E4 /* XCRemoteSwiftPackageReference "DynamicColor" */,
+				B6C1C40C2985B70D00F782E4 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				B6C1C40F2985BB3300F782E4 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
 			);
 			productRefGroup = B680939129853EA6006974A9 /* Products */;
 			projectDirPath = "";
@@ -170,6 +177,7 @@
 				B6C1C4042985A2C600F782E4 /* Frequency.swift in Sources */,
 				B6C1C4002985668800F782E4 /* MotionManager.swift in Sources */,
 				B680939429853EA6006974A9 /* MagnetometerApp.swift in Sources */,
+				B6C1C4132985D1D100F782E4 /* FrequencyTransform.swift in Sources */,
 				B6C1C402298566E400F782E4 /* Colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,20 +391,28 @@
 				minimumVersion = 0.1.2;
 			};
 		};
-		B68093A429855094006974A9 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		B6C1C3FC2985630E00F782E4 /* XCRemoteSwiftPackageReference "DynamicColor" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/yannickl/DynamicColor";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
+			};
+		};
+		B6C1C40C2985B70D00F782E4 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		B6C1C40F2985BB3300F782E4 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -407,15 +423,20 @@
 			package = B68093A129854301006974A9 /* XCRemoteSwiftPackageReference "SwiftUISineWaveShape" */;
 			productName = SwiftUISineWaveShape;
 		};
-		B68093A529855094006974A9 /* SoundpipeAudioKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B68093A429855094006974A9 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
-			productName = SoundpipeAudioKit;
-		};
 		B6C1C3FD2985630E00F782E4 /* DynamicColor */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B6C1C3FC2985630E00F782E4 /* XCRemoteSwiftPackageReference "DynamicColor" */;
 			productName = DynamicColor;
+		};
+		B6C1C40D2985B70D00F782E4 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6C1C40C2985B70D00F782E4 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		B6C1C4102985BB3300F782E4 /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6C1C40F2985BB3300F782E4 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
