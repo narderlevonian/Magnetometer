@@ -23,7 +23,7 @@ struct ContentView: View {
     
     @State
     private var phase: Angle = .zero
-    let phaseShift = Animation.linear(duration: 1.0)
+    let phaseShift = Animation.linear(duration: phaseShiftAnimationDuration)
     
     let timer = Timer.publish(every: 0.001, on: .main, in: .common).autoconnect()
 
@@ -47,7 +47,7 @@ struct ContentView: View {
                       phase: phase,
                       amplitudeRatio: sineWaveAmplitude.x,
                       frequency: sineWaveFrequency.x,
-                      amplitudeModulation: .edges
+                      amplitudeModulation: sineWaveAmplitudeModulationType
                   )
                   .stroke(xSineWaveColor, lineWidth: sineWaveThickness)
                   .opacity(sineWaveOpacity)
@@ -59,7 +59,7 @@ struct ContentView: View {
                       phase: phase,
                       amplitudeRatio:  sineWaveAmplitude.y,
                       frequency: sineWaveFrequency.y,
-                      amplitudeModulation: .edges
+                      amplitudeModulation: sineWaveAmplitudeModulationType
                   )
                   .stroke(ySineWaveColor, lineWidth: sineWaveThickness)
                   .opacity(sineWaveOpacity)
@@ -71,8 +71,9 @@ struct ContentView: View {
                       phase: phase,
                       amplitudeRatio: sineWaveAmplitude.z,
                       frequency: sineWaveFrequency.z,
-                      amplitudeModulation: .edges
+                      amplitudeModulation: sineWaveAmplitudeModulationType
                   )
+
                 .stroke(zSineWaveColor, lineWidth: sineWaveThickness)
                 .opacity(sineWaveOpacity)
                 .onAppear {

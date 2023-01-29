@@ -14,7 +14,7 @@ struct SineWaveFrequency {
     
     init(frequency: Frequency) {
         func convert(_ frequency: Double) -> Double {
-            return pow(abs(frequency), 1/exp)
+            return pow(abs(frequency)/sineWaveFrequencyDivider, 1/exp)
         }
         
         self.x = convert(frequency.x)
