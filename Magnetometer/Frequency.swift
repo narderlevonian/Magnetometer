@@ -7,11 +7,14 @@
 
 import Foundation
 
-let frequencyMultiplier = 1000;
-let frequencyOffset = 20;
-
 struct Frequency {
     var x: Double
     var y: Double
     var z: Double
+    
+    init(motion: MotionManager) {
+        self.x = motion.x
+        self.y = motion.y
+        self.z = motion.z
+    }
 }

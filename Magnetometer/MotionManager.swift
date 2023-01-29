@@ -9,7 +9,6 @@ import Foundation
 import CoreMotion
 
 class MotionManager: ObservableObject {
-
     private var motionManager: CMMotionManager
 
     @Published

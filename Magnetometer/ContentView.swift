@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Magnetometer
 //
-//  Created by Nar der Levonian on thickness8.01.thickness0thickness3.
+//  Created by Nar der Levonian on 28.01.2023.
 //
 
 import SwiftUI
@@ -12,32 +12,30 @@ import AudioToolbox
 import SoundpipeAudioKit
 
 struct ContentView: View {
-    let thickness = 2.0
-    let opacity = 0.64
-    let divider = 5000000.0
-
     var engine = AudioEngine()
 
-    var xOsc = MorphingOscillator(frequency: 440, amplitude: 0.2)
-    var yOsc = MorphingOscillator(frequency: 440, amplitude: 0.2)
-    var zOsc = MorphingOscillator(frequency: 440, amplitude: 0.2)
+    var xOsc = MorphingOscillator()
+    var yOsc = MorphingOscillator()
+    var zOsc = MorphingOscillator()
     
     @ObservedObject
     var motion: MotionManager
     
     @State
     private var phase: Angle = .zero
-    let phaseShift = Animation.linear(duration: 2.0)
+    let phaseShift = Animation.linear(duration: 1.0)
+    
+    let timer = Timer.publish(every: 0.001, on: .main, in: .common).autoconnect()
 
     var body: some View {
-        let frequency = Convert(motion: self.motion, divider: divider);
+        let frequency = Frequency(motion: self.motion)
+        let oscillatorFrequency = OscillatorFrequency(frequency: frequency)
+        let sineWaveFrequency = SineWaveFrequency(frequency: frequency)
+        let sineWaveAmplitude = SineWaveAmplitude(frequency: frequency)
+        
         let dispatchQueue: () = DispatchQueue.main.async {
             withAnimation(phaseShift.repeatForever(autoreverses: false)) {
                 phase.radians = 2.0 * .pi
-                xOsc.frequency = AUValue(frequency.x * frequency.x * 1000 + 20);
-                yOsc.frequency = AUValue(frequency.y * frequency.x * 1000 + 20);
-                zOsc.frequency = AUValue(frequency.z * frequency.x * 1000 + 20);
-                print("Frequency: \(xOsc.frequency)")
             }
         }
         
@@ -47,39 +45,40 @@ struct ContentView: View {
             ZStack {
                 SineWave(
                       phase: phase,
-                      amplitudeRatio: sqrt(frequency.x),
-                      frequency: frequency.x,
+                      amplitudeRatio: sineWaveAmplitude.x,
+                      frequency: sineWaveFrequency.x,
                       amplitudeModulation: .edges
                   )
-                  .stroke(xColor, lineWidth: thickness)
-                  .opacity(opacity)
+                  .stroke(xSineWaveColor, lineWidth: sineWaveThickness)
+                  .opacity(sineWaveOpacity)
                   .onAppear {
                       dispatchQueue
                   }
                 
                 SineWave(
                       phase: phase,
-                      amplitudeRatio: sqrt(frequency.y),
-                      frequency: frequency.y,
+                      amplitudeRatio:  sineWaveAmplitude.y,
+                      frequency: sineWaveFrequency.y,
                       amplitudeModulation: .edges
                   )
-                  .stroke(yColor, lineWidth: thickness)
-                  .opacity(opacity)
+                  .stroke(ySineWaveColor, lineWidth: sineWaveThickness)
+                  .opacity(sineWaveOpacity)
                   .onAppear {
                       dispatchQueue
                   }
                 
                 SineWave(
                       phase: phase,
-                      amplitudeRatio: sqrt(frequency.z),
-                      frequency: frequency.z,
+                      amplitudeRatio: sineWaveAmplitude.z,
+                      frequency: sineWaveFrequency.z,
                       amplitudeModulation: .edges
                   )
-                .stroke(zColor, lineWidth: thickness)
-                .opacity(opacity)
+                .stroke(zSineWaveColor, lineWidth: sineWaveThickness)
+                .opacity(sineWaveOpacity)
                 .onAppear {
                     dispatchQueue
                 }
+
             }
             .onAppear {
                 xOsc.start()
@@ -95,11 +94,17 @@ struct ContentView: View {
                 }
             }
             .padding()
-            .frame(height: UIScreen.main.bounds.size.height * 0.5)
+            .frame(height: UIScreen.main.bounds.size.height)
 
             Spacer()
-            
-        }.background(backgroundColor)
+
+        }
+        .background(contentViewBckgroundColor)
+        .onReceive(timer) { _ in
+            xOsc.frequency = AUValue(oscillatorFrequency.x)
+            yOsc.frequency = AUValue(oscillatorFrequency.y)
+            zOsc.frequency = AUValue(oscillatorFrequency.z)
+        }
     }
 }
 
