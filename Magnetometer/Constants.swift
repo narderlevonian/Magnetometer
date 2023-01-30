@@ -1,5 +1,5 @@
 //
-//  Constants.swift.swift
+//  Constants.swift
 //  Magnetometer
 //
 //  Created by Nar der Levonian on 29.01.2023.
